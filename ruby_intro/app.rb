@@ -1,4 +1,4 @@
 require "mac/say"
 
 # Module/Namespace::Class.method
-Mac::Say.say("Welcome to the world of Ruby!")
+Mac::Say.say("Welcome to the world of ruby")
