@@ -8,7 +8,7 @@ end
 # return all the even numbers less than the given number
 def even_numbers_less_than num
 
-num_array = []
+  num_array = []
 
   for i in 0...num
     if (i % 2) == 0
@@ -21,5 +21,4 @@ end
 # return the average of all numbers in an array
 def average numbers
   average_numbers = numbers.reduce(0.0, :+)/numbers.length
-  average_numbers
 end
