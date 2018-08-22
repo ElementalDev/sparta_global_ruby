@@ -1,11 +1,10 @@
 require_relative "shapes.rb"
 
 class Square < Shape
-  attr_accessor :side_length, :scale_size, :scaled_up_length
+  attr_accessor :side_length
 
-  def initialize(side_length, scale_size)
+  def initialize(side_length)
     self.side_length = side_length
-    self.scale_size = scale_size
   end
   # Gets the area
   def calculate_area
@@ -16,17 +15,7 @@ class Square < Shape
     self.side_length * 4
   end
   # Gets the scaled up length
-  def scale_up
-    self.scaled_up_length = self.side_length * self.scale_size
-  end
-  # Gets scaled area
-  def scaled_area
-    scale_up
-    self.scaled_up_length ** 2
-  end
-  # Gets scaled perimeter
-  def scaled_perimeter
-    scale_up
-    self.scaled_up_length * 4
+  def scale_up(scale)
+    self.side_length *= scale
   end
 end

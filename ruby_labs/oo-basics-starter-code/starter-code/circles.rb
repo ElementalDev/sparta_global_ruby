@@ -1,12 +1,11 @@
 require_relative "shapes.rb"
 
 class Circle < Shape
-  attr_accessor :diameter, :radius, :scaled_radius, :scaled_diameter, :scale_size
+  attr_accessor :diameter, :radius, :scale_size
 
-  def initialize(diameter, scale_size)
+  def initialize(diameter)
     self.diameter = diameter
     self.radius = diameter / 2
-    self.scale_size = scale_size
   end
   # Gets the area
   def calculate_area
@@ -17,18 +16,8 @@ class Circle < Shape
     Math::PI.round(2) * self.diameter
   end
   # Gets the scaled up length
-  def scale_up
-    self.scaled_radius = self.radius * self.scale_size
-    self.scaled_diameter = self.diameter * self.scale_size
-  end
-  # Gets scaled area
-  def scaled_area
-    scale_up
-    Math::PI.round(2) * (self.scaled_diameter ** 2)
-  end
-  # Gets scaled perimeter
-  def scaled_perimeter
-    scale_up
-    Math::PI.round(2) * self.scaled_diameter
+  def scale_up(scale)
+    self.radius *= scale
+    self.diameter *= scale
   end
 end
